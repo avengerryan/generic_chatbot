@@ -3,11 +3,11 @@ import json
 from asgiref.sync import async_to_sync
 from channels.generic.websocket import WebsocketConsumer
 
-from . import tasks
+from chat import tasks
 
 
 COMMANDS = {
-    'helps': {
+    'help': {
         'help': 'Display help message.',
     },
     'sum': {
@@ -56,7 +56,7 @@ def chat_message(self, event):
     # send message to WebSocket
     self.send(text_data=json.dumps(
         {
-            'message': f'[boot]: {message}'
+            'message': f'[bot]: {message}'
         }
     ))
 

@@ -2,7 +2,7 @@
 
 import os
 
-import dj_database_url
+# import dj_database_url
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -15,13 +15,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'e)m%!9)k7(*b!j)*v%k^1^mv9+6u-5^9$3sizgz=fm@5irvm%9'
 SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+# SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'e)m%!9)k7(*b!j)*v%k^1^mv9+6u-5^9$3sizgz=fm@5irvm%9')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 DEBUG = False
 
-ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1']
-
+# ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['*', '127.0.0.1']
 
 # Application definition
 
@@ -82,8 +84,13 @@ DATABASES = {
 }
 
 # Change 'default' database configuration with $DATABASE_URL
-DATABASES['default'].update(dj_database_url.config(conn_max_age=500, ssl_require=True))
+# DATABASES['default'].update(dj_database_url.config(conn_max_age=500, ssl_require=True))
+# DATABASES['default'].update(dj_database_url.config(conn_max_age=500, ssl_require=False))
 
+import dj_database_url
+
+db_from_env = dj_database_url.config(conn_max_age = 500)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -145,7 +152,9 @@ CACHES = {
         "BACKEND": "django_redis.cache.RedisCache",
         "LOCATION": os.environ['REDIS_URL'],
         "OPTIONS": {
-            "CLIENT_CLASS": "django_redis.client.DefaultClient"
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            "MAX_ENTRIES": 300
+            # "MAX_ENTRIES": 1000
         }
     }
 }

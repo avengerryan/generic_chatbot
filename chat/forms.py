@@ -1,7 +1,7 @@
 
 from django import forms
 from celery import group
-from .tasks import add
+from chat.tasks import add
 
 
 class AddForm(forms.Form):
