@@ -13,8 +13,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'e)m%!9)k7(*b!j)*v%k^1^mv9+6u-5^9$3sizgz=fm@5irvm%9'
-# SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+# SECRET_KEY = 'e)m%!9)k7(*b!j)*v%k^1^mv9+6u-5^9$3sizgz=fm@5irvm%9'
+SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -133,6 +133,7 @@ CHANNEL_LAYERS = {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
             'hosts': [os.environ['REDIS_URL']],
+            #"hosts": [os.environ.get('REDIS_URL', 'redis://127.0.0.1:6379')]
         },
     },
 }
