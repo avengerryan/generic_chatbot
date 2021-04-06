@@ -1,0 +1,2 @@
+secret_key text file is for local developement.
+

@@ -1,6 +1,10 @@
 
 
 import os
+import environ
+
+# environ.Env.read_env()
+# SECRET_KEY = os.environ['django_secret_key']
 
 # import dj_database_url
 
@@ -11,6 +15,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
+
+#with open('E:\\generic_chatbot_proj\\generic_chatbot\\secret_key.txt') as f:
+#    SECRET_KEY = f.read().strip()
+
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'e)m%!9)k7(*b!j)*v%k^1^mv9+6u-5^9$3sizgz=fm@5irvm%9'
