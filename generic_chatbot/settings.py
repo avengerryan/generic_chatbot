@@ -1,7 +1,7 @@
 
 
 import os
-import environ
+# import environ
 
 # environ.Env.read_env()
 # SECRET_KEY = os.environ['django_secret_key']
