@@ -1,24 +1,18 @@
 {
-    "name": "Django Chabot",
-    "description": "Django Chatbot application with the background tasks processing and communications via WebSockets.",
-    "keywords": [
-      "celery",
-      "django",
-      "heroku",
-      "daphne",
-      "channels",
-      "django-channels",
-      "chatbot",
-      "websockets"
+  "name": "Django Chabot",
+  "description": "Django Chatbot application with the background tasks processing and communications via WebSockets.",
+  "keywords": [
+    "celery",
+    "django",
+    "heroku",
+    "daphne",
+    "channels",
+    "django-channels",
+    "chatbot",
+    "websockets"
   ],
-  "website": "https://github.com/inoks/django-chatbot/",
-  "repository": "https://github.com/inoks/django-chatbot/",
-  "env": {
-    "DJANGO_SECRET_KEY": {
-      "description": "A secret key for a particular Django installation.",
-      "generator": "secret"
-    }
-  },
+  "website": "https://github.com/avengerryan/generic_chatbot.git/",
+  "repository": "https://github.com/avengerryan/generic_chatbot.git/",
   "formation": {
     "web": {
       "quantity": 1,

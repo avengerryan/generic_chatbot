@@ -1,0 +1,17 @@
+e:
+cd E:\generic_chatbot_proj\generic_chatbot
+manage.py makemigrations
+cd..
+cd generic_chatbot_env
+cd Scripts
+activate.bat
+cd..
+cd generic_chatbot
+manage.py runserver
+manage.py makemigrations
+pip install django-environ
+doskey/history>v_step.txt
+
+| For having a text copy of all the commands on	  | 
+| command prompt of a particular project session, | 
+| type the above doskey command.                  |
